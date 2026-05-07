@@ -1,5 +1,7 @@
-const API_KEY = "3a7e8d66f20e45d1a4c64037260405";
-const BASE_URL = "https://api.weatherapi.com/v1";
+const API_KEY = import.meta.env.VITE_API_KEY;
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
+
 
 export const fetchWeatherByCity = async (city) => {
 
