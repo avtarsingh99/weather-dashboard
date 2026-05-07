@@ -16,7 +16,6 @@ const useWeather = (city) => {
 
             try {
                 const data = await fetchWeatherByCity(city);
-                console.log("API Response: ", data)
                 setWeather(data)
             } catch(err){
                 setError(err.message);

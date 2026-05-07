@@ -15,7 +15,7 @@ const SearchBar = ({onSearch}) => {
     };
 
   return (
-    <div>
+    <div className="search-bar">
       <input 
         type="text"
         placeholder="Enter city name..."
@@ -23,7 +23,10 @@ const SearchBar = ({onSearch}) => {
         onChange={(e)=> setInput(e.target.value)}
         onKeyDown={handleKeyDown}
       />
-      <button onClick={handleClick}>Get Weather</button>
+      {input &&(
+        <span className="clear-btn" onClick={()=> setInput("")}>x</span>
+      )}
+      <button onClick={handleClick} className="weather-btn">Get Weather</button>
     </div>
   );
 };

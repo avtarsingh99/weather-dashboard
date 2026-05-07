@@ -12,13 +12,12 @@ export const StatsGrid = ({ weather }) => {
     ];
 
     return (
-        <div>
-            <h3>Weather Stats</h3>
+        <div className="stat-cards">
             {stats.map((stat) => {
                 return (
-                        <div key={stat.label}>
+                        <div className="stat" key={stat.label}>
                             <p>{stat.label}</p>
-                            <p>{stat.value}</p>
+                            <span>{stat.value}</span>
                         </div>
                 );
             })}

@@ -1,18 +1,438 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #0f0f1a;
   color: white;
   min-height: 100vh;
 }
 
-#root{
-  max-width: 100%;
+.App {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
+}
+
+.header {
+  margin-bottom: 8px;
+}
+
+.header h1{
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Search section */
+
+.search-section{
+  margin-top: 24px;
+}
+
+.search-bar{ 
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 12px;
+}
+
+.search-bar input{
+  flex: 1;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: none;
+  background: #1a1a2e;
+  color: white;
+}
+
+.search-bar input::placeholder{
+  color: #aaa;
+}
+
+.clear-btn{
+  position: absolute;
+  right: 130px;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: color 0.2s;
+}
+
+.clear-btn:hover{
+  color: #fff;
+}
+
+.weather-btn{
+  padding: 12px 24px;
+  white-space: nowrap;
+  border: none;
+  border-radius: 8px;
+  background: #03038b;
+  color: #ddd;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.weather-btn:hover{
+  background: #0505b5;
+}
+
+/* Weather Card CSS */
+
+.weather-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.top-elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.city-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 0.5px solid #1a1a2e;
+  padding: 20px 14px;
+  border-radius: 16px;
+  box-shadow: 2px 2px 16px rgba(255, 255, 255, 0.05);
+  flex: 1;
+}
+
+.city-title p {
+  color: #ddddddad;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.current-weather {
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: navy;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: rgb(182, 222, 255);
+  white-space: nowrap;
+  align-self: flex-start;
+}
+
+.bottom-elements {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 60px;
+  border: 0.5px solid #1a1a2e;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px 24px;
+  border-radius: 16px;
+  box-shadow: 2px 2px 16px rgba(255, 255, 255, 0.03);
+  flex-wrap: nowrap;
+}
+
+.curr-temp {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.curr-temp p {
+  color: #ddddddad;
+  font-size: 14px;
+}
+
+.curr-temp h2 {
+  font-size: 2.8rem;
+  font-weight: 500;
+}
+
+.high-low {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.high-low p {
+  color: #ddddddad;
+  font-size: 14px;
+}
+
+.high-low span {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Stats Grid CSS */
+
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 0.5px solid #1a1a2e;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+  padding: 12px 16px;
+  border-radius: 10px;
+}
+
+.stat p{
+  color: #ddddddad;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+}
+
+.stat span{
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+
+/* Rain Probability CSS */
+
+.rain-chance{
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rain-chance h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ddddddad;
+}
+
+.rain{
+  padding: 10px 24px;
+  width: fit-content;
+  background: #a9a9ff;
+  border-radius: 24px;
+  font-weight: 600;
+  color: navy;
+  font-size: 14px;
+}
+
+
+/* Sun Moon CSS  */
+
+.sun-moon{
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  color: #ddddddad;
+  margin-bottom: 2rem;
+}
+
+.common-class{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 0.5px solid #1a1a2e;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.common-class span{
+  font-weight: 600;
+  color: #ddd;
+  font-size: 16px;
+}
+
+.moon-phase{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.5px solid #1a1a2e;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.left{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.left span{
+  font-weight: 600;
+  color: #ddd;
+  font-size: 16px;
+}
+
+.right span{
+  color: #ddd;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 3rem;
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.error {
+  text-align: center;
+  margin-top: 3rem;
+  color: #ff6b6b;
+  font-size: 1rem;
+}
+
+
+/* ── Tablet (max 768px) ── */
+@media (max-width: 768px) {
+
+  .App {
+    padding: 1.5rem 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Stats — 2 columns on tablet */
+  .stat-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .curr-temp h2 {
+    font-size: 2.2rem;
+  }
+
+  .bottom-elements {
+    gap: 40px;
+    padding: 16px 20px;
+  }
+}
+
+/* ── Mobile (max 480px) ── */
+@media (max-width: 480px) {
+
+  .App {
+    padding: 1rem 0.75rem;
+  }
+
+  .header h1 {
+    font-size: 1.3rem;
+  }
+
+  /* Search */
+  .search-bar {
+    gap: 8px;
+  }
+
+  .search-bar input {
+    font-size: 0.9rem;
+    padding: 0.65rem 2rem 0.65rem 0.75rem;
+  }
+
+  .weather-btn {
+    padding: 0.65rem 1rem;
+    font-size: 13px;
+  }
+
+  .clear-btn {
+    right: 95px;
+  }
+
+  /* Weather card */
+  .city-title h2 {
+    font-size: 1.4rem;
+  }
+
+  .city-title p {
+    font-size: 12px;
+  }
+
+  .top-elements {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .current-weather {
+    align-self: flex-start;
+  }
+
+  .bottom-elements {
+    gap: 24px;
+    padding: 14px 16px;
+    flex-direction: row;
+  }
+
+  .curr-temp h2 {
+    font-size: 2rem;
+  }
+
+  .high-low span {
+    font-size: 1.2rem;
+  }
+
+  .middle-line {
+    display: none;
+  }
+
+  /* Stats — 2 columns on mobile */
+  .stat-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .stat span {
+    font-size: 0.95rem;
+  }
+
+  /* Rain */
+  .rain-chance {
+    margin-top: 24px;
+  }
+
+  .rain {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+
+  /* Sun moon — 1 column on mobile */
+  .sun-moon {
+    grid-template-columns: 1fr;
+    margin-top: 24px;
+  }
+
+  .moon-phase {
+    padding: 12px 14px;
+  }
+
+  .left span,
+  .right span,
+  .common-class span {
+    font-size: 14px;
+  }
 }
