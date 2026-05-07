@@ -99,16 +99,16 @@ body {
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+  border: 0.5px solid #1a1a2e;
+  padding: 20px 14px;
+  border-radius: 16px;
+  box-shadow: 2px 2px 16px rgba(255, 255, 255, 0.05);
 }
 
 .city-title {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border: 0.5px solid #1a1a2e;
-  padding: 20px 14px;
-  border-radius: 16px;
-  box-shadow: 2px 2px 16px rgba(255, 255, 255, 0.05);
   flex: 1;
 }
 
@@ -127,7 +127,6 @@ body {
   letter-spacing: 1px;
   background: rgb(182, 222, 255);
   white-space: nowrap;
-  align-self: flex-start;
 }
 
 .bottom-elements {
