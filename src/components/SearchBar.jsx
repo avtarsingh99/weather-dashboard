@@ -16,7 +16,9 @@ const SearchBar = ({onSearch}) => {
 
   return (
     <div className="search-bar">
+    <div style={{position: 'relative', width: '100%'}}>
       <input 
+        style={{width: '100%'}}
         type="text"
         placeholder="Enter city name..."
         value={input}
@@ -26,9 +28,10 @@ const SearchBar = ({onSearch}) => {
       {input &&(
         <span className="clear-btn" onClick={()=> setInput("")}>x</span>
       )}
+      </div>
       <button onClick={handleClick} className="weather-btn">Get Weather</button>
     </div>
-  );
+  )
 };
 
 export default SearchBar

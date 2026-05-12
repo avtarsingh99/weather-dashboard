@@ -8,4 +8,4 @@ export const RainProbability = ({weather}) => {
             <span className="rain">{day.daily_chance_of_rain}% overall chance</span>
         </div>
     );
-}
+} 

@@ -56,7 +56,7 @@ body {
 
 .clear-btn{
   position: absolute;
-  right: 130px;
+  right: 10px;
   color: #aaa;
   cursor: pointer;
   font-size: 1.5rem;
@@ -358,9 +358,6 @@ body {
     font-size: 13px;
   }
 
-  .clear-btn {
-    right: 95px;
-  }
 
   /* Weather card */
   .city-title h2 {
