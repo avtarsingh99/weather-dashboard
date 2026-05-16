@@ -1,10 +1,7 @@
 import './App.css'
 import useWeather from './hooks/useWeather';
 import { WeatherCard } from './components/WeatherCard';
-import { LoadingSpinner } from './components/LoadingSpinner';
-import { ErrorMessage } from './components/ErrorMessage';
 import { StatsGrid } from './components/StatsGrid';
-import { RainProbability } from './components/RainProbability';
 import { SunMoon } from './components/SunMoon';
 import { useState } from 'react';
 import SearchBar from './components/SearchBar';
@@ -24,22 +21,25 @@ function App() {
       </div>
 
       <div className='search-section'>
-      <SearchBar onSearch={(newCity) => setCity(newCity)} />
+        <SearchBar city={(newCity) => setCity(newCity)} />
       </div>
-      {loading && <LoadingSpinner />}
+      {loading && (
+        <p>Loading weather data, please wait....</p>
+      )}
 
-      {error && <ErrorMessage message={error} />}
+      {error && (
+        <p>{error}</p>
+      )}
 
-      {
-        weather && !loading && !error && (
-          <>
-            <WeatherCard weather={weather} />
-            <StatsGrid weather={weather} />
-            <RainProbability weather={weather} />
-            <SunMoon weather={weather} />
-          </>
-        )
-      }
+      {weather && !loading && !error && (
+        <>
+          <WeatherCard weather={weather} />
+          <h3 className='section-heading'>Humidity & Wind</h3>
+          <StatsGrid weather={weather} />
+          <h3 className='section-heading'>Sun & Moon</h3>
+          <SunMoon weather={weather} />
+        </>
+      )}
     </div>
   )
 }
